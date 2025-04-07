@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     "Registration Successful", Toast.LENGTH_SHORT).show();
 
                             // Send email verification
-//                            sendEmailVerification(user);
+                            sendEmailVerification(user);
 
                             // Navigate to MainActivity
                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);

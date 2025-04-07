@@ -59,8 +59,12 @@ public class MovieFavDetailsActivity extends AppCompatActivity {
         // Display movie details
         displayMovieDetails();
 
-        // Set click listeners
-        setupClickListeners();
+        // Update button
+        binding.btnUpdate.setOnClickListener(v -> updateMovie());
+        // Delete button
+        binding.btnDelete.setOnClickListener(v -> deleteMovie());
+        // Back button
+        binding.btnBack.setOnClickListener(v -> finish());
     }
 
     private void displayMovieDetails() {
@@ -79,17 +83,6 @@ public class MovieFavDetailsActivity extends AppCompatActivity {
         Glide.with(this)
              .load(movie.getPoster())
              .into(binding.imageMoviePoster);
-    }
-
-    private void setupClickListeners() {
-        // Update button
-        binding.btnUpdate.setOnClickListener(v -> updateMovie());
-
-        // Delete button
-        binding.btnDelete.setOnClickListener(v -> deleteMovie());
-
-        // Back button
-        binding.btnBack.setOnClickListener(v -> finish());
     }
 
     private void updateMovie() {

@@ -29,6 +29,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
     private ActivityMovieDetailsBinding binding;
     private MovieViewModel movieViewModel;
 
+    // Movie Attributes
     private String _imdbId;
     private String _poster;
     private String _title;
@@ -100,6 +101,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 Toast.makeText(this, error, Toast.LENGTH_SHORT).show());
 
 
+        // Add to Favorites Button listener
         binding.btnAddToFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,11 +109,9 @@ public class MovieDetailsActivity extends AppCompatActivity {
             }
         });
 
-        // Set up Back button listener
+        // Back button listener
         binding.btnBack.setOnClickListener(view -> finish());
     }
-
-
 
     private void SaveDataToNewDocument(String imdbId, String poster, String title, String year,
                                        String director, String genre, String plot, String imdbRating, String runtime) {

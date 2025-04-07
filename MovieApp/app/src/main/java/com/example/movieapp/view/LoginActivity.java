@@ -64,22 +64,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-//        currentUser = mAuth.getCurrentUser();
-
-        // If user is already logged in, go directly to MainActivity
-//        if (currentUser != null) {
-//            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            startActivity(intent);
-//            finish();
-//        }
-    }
-
-
-
     // Login logic
     private void loginUser() {
         String email = binding.editTextEmail.getText().toString().trim();
@@ -98,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-//        // Show loading state (you might want to add a progress bar)
+        // Show loading state (you might want to add a progress bar)
         binding.btnLogin.setEnabled(false);
         binding.btnLogin.setText("Logging in...");
 
@@ -109,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            currentUser = mAuth.getCurrentUser();
                             Toast.makeText(LoginActivity.this, "Login Successful",
                                     Toast.LENGTH_SHORT).show();
 
@@ -119,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         } else {
-                            // If sign in fails, display a message to the user.
+                            // If sign in fails, display a Toast message to the user.
                             Toast.makeText(LoginActivity.this, "Authentication failed: " +
                                     task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
