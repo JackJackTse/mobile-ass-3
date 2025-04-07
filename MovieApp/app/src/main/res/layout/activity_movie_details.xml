@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="16dp"
+    tools:context=".view.MovieDetailsActivity">
+
+    <!-- Movie Image -->
+    <ImageView
+        android:id="@+id/imageMoviePoster"
+        android:layout_width="0dp"
+        android:layout_height="312dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Movie Title -->
+    <TextView
+        android:id="@+id/textMovieTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Movie Title"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/imageMoviePoster"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Movie Details -->
+    <TextView
+        android:id="@+id/textMovieDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="2018  |  Comedy  |  1:41:19  |  ★ 4.5 Ratings"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/textMovieTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Director -->
+    <TextView
+        android:id="@+id/textMovieDirector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Director - Chris Nolan"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/textMovieDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Description Title -->
+    <TextView
+        android:id="@+id/textMovieDescriptionTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Description:"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textMovieDirector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Movie Description -->
+    <TextView
+        android:id="@+id/textMovieDescription"
+        android:layout_width="383dp"
+        android:layout_height="245dp"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:scrollbars="vertical"
+        android:text="Movie description goes here..."
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:lineSpacingExtra="8dp"
+        app:layout_constraintTop_toBottomOf="@id/textMovieDescriptionTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#8B0000"
+        android:padding="12dp"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddToFav"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Add To Fav Button -->
+    <Button
+        android:id="@+id/btnAddToFav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#8B0000"
+        android:padding="12dp"
+        android:text="Add To Fav"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
