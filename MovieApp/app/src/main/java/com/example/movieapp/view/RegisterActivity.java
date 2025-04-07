@@ -97,8 +97,6 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(RegisterActivity.this,
                                     "Registration Successful", Toast.LENGTH_SHORT).show();
 
-                            // Send email verification
-                            sendEmailVerification(user);
 
                             // Navigate to MainActivity
                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -119,19 +117,4 @@ public class RegisterActivity extends AppCompatActivity {
                 });
     }
 
-    private void sendEmailVerification(FirebaseUser user) {
-        if (user != null) {
-            user.sendEmailVerification()
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(RegisterActivity.this,
-                                        "Verification email sent",
-                                        Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-        }
-    }
 }
